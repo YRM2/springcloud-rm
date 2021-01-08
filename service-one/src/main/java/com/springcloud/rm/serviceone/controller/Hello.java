@@ -1,5 +1,7 @@
 package com.springcloud.rm.serviceone.controller;
 
+import com.springcloud.rm.serviceone.service.IGetHi;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +17,14 @@ public class Hello {
     @Value("${env}")
     String logLevel;
 
+    @Autowired
+    private IGetHi getHi;
+
     @GetMapping("/hello")
     public String Hello(){
         System.out.println(port);
-        return port;
+        System.out.println("call service-two interface: " + getHi.getHi());
+        return port ;
     }
 
     @GetMapping("/logLevel")

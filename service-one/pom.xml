@@ -34,12 +34,12 @@
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
         <!-- idea中启动多实例时，注掉热加载-->
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
